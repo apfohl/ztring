@@ -17,7 +17,7 @@ char *ztr_new(const char *input)
     ztr->allocated = length;
     ztr->length = input_length;
 
-    strncpy(ztr->buffer, input, input_length);
+    memcpy(ztr->buffer, input, input_length);
 
     ztr->buffer[ztr->length] = '\0';
 
