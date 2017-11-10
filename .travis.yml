@@ -2,9 +2,15 @@ language: c
 sudo: false
 compiler:
   - clang
+  - gcc
 addons:
   apt:
     packages:
     - valgrind
+before_install:
+  - pip install --user cpp-coveralls
 script:
+  - make test
   - make valgrind
+after_success:
+  - cpp-coveralls -y .coveralls.yaml

@@ -24,11 +24,15 @@ SPECK_CFLAGS = -I.
 SPECK_LDFLAGS = -L.
 SPECK_LIBS = -lztring
 -include speck/speck.mk
+test: SPECK_CFLAGS += --coverage
 test: $(SPECK) $(LIB) $(SUITES)
 	@$(SPECK)
 
 valgrind: $(SPECK) $(LIB) $(SUITES)
 	@valgrind --leak-check=full --error-exitcode=1 $(SPECK)
+
+coverage: test
+	@gcov -lp $(SOURCES)
 
 install: release
 	mkdir -p $(INCLUDE_DIR)
@@ -45,5 +49,5 @@ style:
 
 clean:
 	rm -f $(LIB) $(OBJECTS)
-	rm -rf *.dSYM spec/*.dSYM
+	rm -rf *.dSYM spec/*.dSYM *.gc*
 	rm -f spec/*.so

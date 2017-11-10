@@ -1,6 +1,7 @@
 # Ztring
 
 [![Build Status](https://travis-ci.org/apfohl/ztring.svg?branch=master)](https://travis-ci.org/apfohl/ztring)
+[![Coverage Status](https://coveralls.io/repos/github/apfohl/ztring/badge.svg?branch=master)](https://coveralls.io/github/apfohl/ztring?branch=master)
 
 Ztring is a dynamic string library for C.
 
