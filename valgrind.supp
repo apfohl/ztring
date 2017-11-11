@@ -1,0 +1,10 @@
+{
+   test_calloc_returns_null
+   Memcheck:FishyValue
+   calloc(nmemb)
+   fun:calloc
+   fun:ztr_new_length
+   fun:spec_ztr_new_length_calloc_null
+   fun:run_tests
+   fun:main
+}

@@ -34,7 +34,7 @@ test: $(SPECK) $(LIB) $(SUITES)
 	@rm -f $(COVERAGE_RM_SUITES)
 
 valgrind: $(SPECK) $(LIB) $(SUITES)
-	@valgrind --leak-check=full --error-exitcode=1 $(SPECK)
+	@valgrind --suppressions=valgrind.supp --leak-check=full --error-exitcode=1 $(SPECK)
 
 coverage: test
 	@gcov -lp $(SOURCES)
