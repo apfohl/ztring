@@ -47,6 +47,8 @@ void spec_ztr_new_length_input_empty(void)
 
     sp_assert_equal_s(ztr, "");
     sp_assert_equal_i(length, 0);
+
+    ztr_free(ztr);
 }
 
 void spec_ztr_new_length_calloc_null(void)
