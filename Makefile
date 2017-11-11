@@ -12,7 +12,11 @@ LDLIBS =
 SOURCES = ztring.c
 OBJECTS = $(patsubst %.c, %.o, $(SOURCES))
 
+COVERAGE_RM_SUITES = $(patsubst spec/%.c, %.gc*, $(wildcard spec/*.c))
+
 .PHONY: release install uninstall test valgrind style clean
+
+test: CFLAGS += --coverage
 
 $(LIB): $(OBJECTS)
 	ar -rcs $@ $^
@@ -27,6 +31,7 @@ SPECK_LIBS = -lztring
 test: SPECK_CFLAGS += --coverage
 test: $(SPECK) $(LIB) $(SUITES)
 	@$(SPECK)
+	@rm -f $(COVERAGE_RM_SUITES)
 
 valgrind: $(SPECK) $(LIB) $(SUITES)
 	@valgrind --leak-check=full --error-exitcode=1 $(SPECK)
