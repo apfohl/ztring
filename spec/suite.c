@@ -1,6 +1,5 @@
 #include <speck.h>
 #include <ztring.h>
-#include <stdio.h>
 
 void spec_ztr_new(void)
 {

@@ -2,8 +2,6 @@
 
 #include "ztring.h"
 
-#include <stdio.h>
-
 const size_t ZTR_HEADER_SIZE = sizeof(struct ztr_header);
 
 char *ztr_new(const char *input)
