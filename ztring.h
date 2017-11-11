@@ -11,6 +11,8 @@ struct __attribute__((__packed__)) ztr_header {
 
 char *ztr_new(const char *input);
 
+char *ztr_new_length(const char *input, size_t length);
+
 void ztr_free(char *ztr);
 
 size_t ztr_length(const char *ztr);
