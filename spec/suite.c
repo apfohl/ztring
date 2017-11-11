@@ -31,3 +31,15 @@ void spec_ztr_length(void)
     /* cleanup */
     ztr_free(ztr);
 }
+
+void spec_ztr_length_null_input(void)
+{
+    /* arrange */
+    char *ztr = NULL;
+
+    /* act */
+    size_t length = ztr_length(ztr);
+
+    /* assert */
+    sp_assert_equal_i(length, 0);
+}
