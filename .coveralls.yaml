@@ -1,2 +1,3 @@
 build_root: '.'
+exclude: 'speck'
 gcov_options: '-lp'
