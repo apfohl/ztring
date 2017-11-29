@@ -9,7 +9,10 @@ Ztring is a dynamic string library for C.
 
 ### macOS with Homebrew
 
-Coming soon...
+If you use Homebrew under macOS you can use the tap `apfohl/brew`:
+
+    $ brew tap apfohl/brew
+    $ brew install ztring
 
 ### Manually
 
